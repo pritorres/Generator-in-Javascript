@@ -7,7 +7,6 @@ import "./assets/img/4geeks.ico";
 
 window.onload = function() {
   //write your code here
- 
 
   let who = ["the dog", "my granma", "his turtle", "my bird"];
   let what = ["eat", "pissed", "crushed", "broked"];
@@ -18,15 +17,15 @@ window.onload = function() {
     "during my lunch",
     "while I was praying"
   ];
+  function GetRandomByMax(max) {
+    return Math.floor(Math.random() * (max - 0) + 0);
+  }
 
-  const whoPosition = Math.floor(Math.random() * (who.length - 0) + 0);
-  const WhatPosition = Math.floor(Math.random() * (what.length - 0) + 0);
-  const whenPosition = Math.floor(Math.random() * (when.length - 0) + 0);
-
+  const whoPosition = GetRandomByMax(who.length);
+  const whatPosition = GetRandomByMax(what.length);
+  const whenPosition = GetRandomByMax(when.length);
   const NewString =
-    who[whoPosition] + " " + what[whoPosition] + " " + when[whenPosition];
+    who[whoPosition] + " " + what[whatPosition] + " " + when[whenPosition];
 
   document.getElementById("excuse").innerHTML = NewString;
-
-  console.log(NewString);
 };
